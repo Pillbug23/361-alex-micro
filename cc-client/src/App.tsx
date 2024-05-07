@@ -44,6 +44,8 @@ function App() {
     setZipCode(event.target.value)
   };
 
+  console.log(weather)
+  
   return (
     <div className="App">
       <header className="">

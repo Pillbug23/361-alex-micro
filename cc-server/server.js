@@ -17,6 +17,7 @@ app.get('/weather/:zipcode', async (req, res) => {
       console.log(zipcode)
       const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=0d4ed5ab2ec3c370df2be128922940b9`);
       const data = await response.json();
+      console.log(data)
       const temperature = data.main.temp
       const name = data.name
       const description = data.weather[0].description
