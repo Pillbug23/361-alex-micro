@@ -9,17 +9,17 @@ We are CalorieCurious. Our application is designed to provide you with the nutri
 To request weather data from the microservice, you need to make a
 GET request to the /weather/:zipcode endpoint in the server.js file, where :zipcode is the ZIP code for which you want to fetch the weather data.
 
-To do this, please input the zip code in the following input element in the App.tsx file by navigating to:
+To do this, please input the zip code in the following input element in the App.tsx file by navigating to:     
+     
+cd 361-alex-micro    
+cd cc-client   
+npm start    
 
-cd 361-alex-micro
-cd cc-client
-npm start
-
-Example Request sent to server:
-GET http://localhost:3100/weather/94107
-
-The data is sent to the endpoint
-app.get('/weather/:zipcode', async (req, res) => {
+Example Request sent to server:   
+GET http://localhost:3100/weather/94107    
+   
+The data is sent to the endpoint   
+app.get('/weather/:zipcode', async (req, res) => {   
     try {
       const { zipcode } = req.params;
       console.log(zipcode)
