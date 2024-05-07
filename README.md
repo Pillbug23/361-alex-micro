@@ -17,12 +17,27 @@ cd cc-client
 npm start    
 ```
 
+This opens up the client side to be used to fetch backend data. Now to open the backend. In another terminal, open up the backend server file:
+
+```
+cd 361-alex-micro    
+cd cc-server  
+node server.js
+```
+
+The API can be called by making a fetch request to the endpoint like so after inputting 
+the zip code:
+
 Example Request sent to server:   
 ```
 GET http://localhost:3100/weather/94107    
 ```
 
-The data is sent to the endpoint 
+The data is sent to the endpoint where zipcode is your inputted zipcode.
+```
+await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=0d4ed5ab2ec3c370df2be128922940b9`); 
+```
+
 ```  
 app.get('/weather/:zipcode', async (req, res) => {   
     try {   
@@ -46,7 +61,7 @@ The data is sent to the endpoint:
 Send a json request back to the frontend using res.json(),
 containing the weather data for the specified ZIP code.
 
-The response will include these fields:  
+The response will include these fields in the response object:  
 ``` 
 temperature: The temperature in Kelvin.    
 description: A brief description of the weather conditions.   
