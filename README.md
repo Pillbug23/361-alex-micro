@@ -74,7 +74,7 @@ Example Response:
 
 
 # UML Sequence Diagram
-
+```
   +-------------+                        +-------------+    
   |   Client    |                        |   Server    |    
   +-------------+                        +-------------+    
@@ -86,7 +86,8 @@ Example Response:
        |  Response (2): JSON weather data       |   
        |<---------------------------------------+   
        |                                        |   
-   
+
+```
    
 (1) The frontend will send a get request to the following api 
 code listed above with the zip code
