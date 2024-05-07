@@ -9,16 +9,21 @@ We are CalorieCurious. Our application is designed to provide you with the nutri
 To request weather data from the microservice, you need to make a
 GET request to the /weather/:zipcode endpoint in the server.js file, where :zipcode is the ZIP code for which you want to fetch the weather data.
 
-To do this, please input the zip code in the following input element in the App.tsx file by navigating to:     
-     
+To do this, please input the zip code in the following input element in the App.tsx file by navigating to:  
+
+```
 cd 361-alex-micro    
 cd cc-client   
 npm start    
+```
 
 Example Request sent to server:   
+```
 GET http://localhost:3100/weather/94107    
-   
-The data is sent to the endpoint   
+```
+
+The data is sent to the endpoint 
+```  
 app.get('/weather/:zipcode', async (req, res) => {   
     try {   
       const { zipcode } = req.params;   
@@ -34,18 +39,22 @@ app.get('/weather/:zipcode', async (req, res) => {
       res.status(500).json({ error: 'Failed to fetch weather data' });   
     }  
   });  
-    
+```
 # How to programmatically RECEIVE data?
 
 The data is sent to the endpoint:
 Send a json request back to the frontend using res.json(),
 containing the weather data for the specified ZIP code.
 
-The response will include these fields:   
+The response will include these fields:  
+``` 
 temperature: The temperature in Kelvin.    
 description: A brief description of the weather conditions.   
 name: The name of the city for which the weather data is fetched.   
-   
+```
+
+
+``` 
 app.get('/weather/:zipcode', async (req, res) => {   
     try {   
       const { zipcode } = req.params;   
@@ -62,16 +71,18 @@ app.get('/weather/:zipcode', async (req, res) => {
       res.status(500).json({ error: 'Failed to fetch weather data' });   
     }  
   });  
+```
 
 Example Response:  
-  
+
+```
 {  
   "temperature": 291.68,  
   "description": "clear sky",  
   "name": "San Francisco"  
 }   
 
-
+```
 
 # UML Sequence Diagram
 ```
